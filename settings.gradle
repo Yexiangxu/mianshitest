@@ -1,1 +1,1 @@
-include ':app', ':apt_compiler', ':apt_annotation',':multi-image-selector', ':mvvmproject'
+include ':app', ':apt_compiler', ':apt_annotation',':multi-image-selector', ':mvvmproject', ':base_common', ':mine'

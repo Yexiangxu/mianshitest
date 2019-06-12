@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/apt_annotation" />
             <option value="$PROJECT_DIR$/apt_compiler" />
+            <option value="$PROJECT_DIR$/base_common" />
+            <option value="$PROJECT_DIR$/mine" />
             <option value="$PROJECT_DIR$/multi-image-selector" />
             <option value="$PROJECT_DIR$/mvvmproject" />
           </set>
