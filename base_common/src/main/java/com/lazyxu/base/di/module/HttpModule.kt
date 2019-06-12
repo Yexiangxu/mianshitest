@@ -3,6 +3,7 @@ package com.lazyxu.base.di.module
 
 import android.app.Application
 import android.util.Log
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.lazyxu.base.BuildConfig
 import com.lazyxu.base.Config
 import com.lazyxu.base.utils.LogUtil
@@ -43,6 +44,7 @@ open class HttpModule {
                 .connectTimeout(120, TimeUnit.SECONDS)
                 .writeTimeout(120, TimeUnit.SECONDS)
                 .readTimeout(120, TimeUnit.SECONDS)
+                .addNetworkInterceptor(StethoInterceptor())
                 .addNetworkInterceptor(httpLoggingInterceptor).build()
     }
 
