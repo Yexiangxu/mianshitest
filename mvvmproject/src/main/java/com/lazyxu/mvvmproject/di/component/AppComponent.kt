@@ -9,7 +9,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [AppModule::class, HttpModule::class])
 interface AppComponent {
-    fun mineUseCase(): FilmUseCase
+    val mineUseCase: FilmUseCase
 
 }
 
