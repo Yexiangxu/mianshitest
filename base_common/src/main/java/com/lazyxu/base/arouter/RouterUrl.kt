@@ -7,5 +7,6 @@ package com.lazyxu.base.arouter
  * FIXME
  */
 object RouterUrl {
-    const val  LOGIN = "/mine/login"
+    const val  LOGIN = "/film/login"
+    const val  HOTFILM = "/film/hot"
 }

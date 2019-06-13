@@ -55,7 +55,7 @@ dependencies {
     if (isModule.toBoolean()) {
         implementation project(':base_common')
     } else {
-        implementation project(':mine')
+        implementation project(':film')
     }
     kapt 'com.alibaba:arouter-compiler:1.2.2'
     kapt 'com.google.dagger:dagger-compiler:2.19'
