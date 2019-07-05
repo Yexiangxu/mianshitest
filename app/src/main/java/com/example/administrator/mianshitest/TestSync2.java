@@ -1,8 +1,13 @@
 package com.example.administrator.mianshitest;
 
+import android.util.Log;
+import android.util.LruCache;
+
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class TestSync2 {
+    String a="a";
+    String b="";
     private ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
     public static void main(String[] args) {
         final TestSync2 test = new TestSync2();
@@ -21,6 +26,9 @@ public class TestSync2 {
 
     }
     public void get(Thread thread) {
+        System.out.println(a.getClass() );
+        System.out.println(a.toString() );
+        rwl.hashCode();
         rwl.readLock().lock();
         try {
             for (int i = 0; i < 5; i++) {
@@ -32,4 +40,6 @@ public class TestSync2 {
             System.out.println(thread.getName() + "释放锁");
         }
     }
+
+
 }

@@ -34,8 +34,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation project(':apt_annotation')
     annotationProcessor project(':apt_compiler')
-    implementation project(':multi-image-selector')
     //glide
+
+    api 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     implementation 'top.zibin:Luban:1.1.8'
     implementation 'com.qiniu:qiniu-android-sdk:7.3.15'
     implementation files('libs/qiniu-java-sdk-7.2.11.jar')
@@ -55,10 +57,15 @@ dependencies {
     implementation 'com.google.dagger:dagger-android:2.19'
     implementation 'com.google.dagger:dagger-android-support:2.19'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.19'
-    //log
+    //调试
     implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
     //导航栏
     implementation files('libs/lonelysword-0.4.1-sources.jar')
+
+
 }
 
 

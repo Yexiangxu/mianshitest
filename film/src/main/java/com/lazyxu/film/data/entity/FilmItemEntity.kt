@@ -93,4 +93,8 @@ class FilmItemEntity : Serializable {
 
         var version: String? = null
     }
+
+    override fun toString(): String {
+        return "FilmItemEntity(aN1=$aN1, aN2=$aN2, actors=$actors, commonSpecial=$commonSpecial, d=$d, dN=$dN, id=$id, img=$img, isIs3D=$isIs3D, isIsDMAX=$isIsDMAX, isIsHot=$isIsHot, isIsIMAX=$isIsIMAX, isIsIMAX3D=$isIsIMAX3D, isIsNew=$isIsNew, movieId=$movieId, movieType=$movieType, r=$r, rd=$rd, sc=$sc, t=$t, tCn=$tCn, tEn=$tEn, wantedCount=$wantedCount, year=$year, versions=$versions)"
+    }
 }

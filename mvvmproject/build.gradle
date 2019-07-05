@@ -19,6 +19,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.Config.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -59,6 +60,7 @@ dependencies {
     }
     kapt 'com.alibaba:arouter-compiler:1.2.2'
     kapt 'com.google.dagger:dagger-compiler:2.19'
+
     kapt 'android.arch.lifecycle:compiler:1.1.1'
     kapt 'android.arch.persistence.room:compiler:1.1.1'
 }

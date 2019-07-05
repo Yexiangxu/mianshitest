@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
 
     kapt {
@@ -59,14 +60,17 @@ dependencies {
     //di
     api 'com.google.dagger:dagger:2.19'
     kapt 'com.google.dagger:dagger-compiler:2.19'
-    //    implementation 'com.google.dagger:dagger-android:2.19'
-    //    implementation 'com.google.dagger:dagger-android-support:2.19'
-    //    annotationProcessor 'com.google.dagger:dagger-android-processor:2.19'
+//    implementation 'com.google.dagger:dagger-android:2.19'
+//    implementation 'com.google.dagger:dagger-android-support:2.19'
+//    annotationProcessor 'com.google.dagger:dagger-android-processor:2.19'
     //调试库
     implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
-
     api 'com.orhanobut:logger:2.2.0'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-alpha-2'
+
     //arouter
     api 'com.alibaba:arouter-api:1.4.1'
     kapt 'com.alibaba:arouter-compiler:1.2.2'
@@ -80,5 +84,9 @@ dependencies {
     //glide
     api 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    //statusbar  https://github.com/gyf-dev/ImmersionBar
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0-beta05'// 基础依赖包，必须要依赖
+    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0-beta05'// fragment快速实现（可选）
+    implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0-beta05'// kotlin扩展（可选）
 
 }

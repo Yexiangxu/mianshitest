@@ -1,3 +1,5 @@
+1. 使用今日头条屏幕适配方案
+2. 使用 ImmersionBar 处理 StatusBar
 ####kotlin配置
 //必须
 apply plugin: 'kotlin-android'

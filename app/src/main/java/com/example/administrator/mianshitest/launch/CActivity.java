@@ -20,10 +20,10 @@ public class CActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_c);
-        flag = getIntent().getIntExtra("BActivity", 0);
+        flag = getIntent().getIntExtra("LeakAActivity", 0);
         Log.i("processtest", "CActivity的flag="+flag);
         showButton = findViewById(R.id.tv_c);
-        showButton.setText("CActivity");
+        showButton.setText("LeakBActivity");
         showButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

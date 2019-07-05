@@ -8,6 +8,8 @@ import com.lazyxu.base.BuildConfig;
 import com.lazyxu.base.di.component.AppComponent;
 import com.lazyxu.base.di.component.DaggerAppComponent;
 import com.lazyxu.base.di.module.AppModule;
+import com.lazyxu.base.utils.ScreenAdapterUtil;
+import com.squareup.leakcanary.LeakCanary;
 
 
 public class BaseApplication extends Application {
@@ -23,19 +25,21 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         MINSTATCE = this;
+        //今日头条屏幕适配（宽高不能同时适配，这里只做了宽度竖屏适配，如果有横竖屏切换还需处理）
+        ScreenAdapterUtil.setDensity(this, 360);
         initDebug();
-        ARouter.init(this); // 必须在initDebug后
+        ARouter.init(this);
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return;
+        }
+        LeakCanary.install(this);
     }
-
-    /**
-     * 调试
-     */
 
     private void initDebug() {
         if (BuildConfig.DEBUG) {
             // 这两行必须写在init之前，否则这些配置在init过程中将无效
-            ARouter.openLog();     // 打印日志
-            ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
+            ARouter.openLog();
+            ARouter.openDebug();
             Stetho.initializeWithDefaults(this);
         }
     }
