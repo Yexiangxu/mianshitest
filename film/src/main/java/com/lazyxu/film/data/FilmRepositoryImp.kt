@@ -7,6 +7,9 @@ import com.lazyxu.film.data.entity.MtimeFilmeEntity
 import io.reactivex.Flowable
 import javax.inject.Inject
 
+/**
+ * impl 子包中一般存放 仓储中的实现类
+ */
 class FilmRepositoryImp @Inject
 constructor(private val filmApiService: FilmApiService) : FilmRepository {
 

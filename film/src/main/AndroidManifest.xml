@@ -3,7 +3,6 @@
     package="com.lazyxu.film">
 
     <application>
-        <activity android:name="com.lazyxu.film.ui.login.LoginActivity" />
         <activity android:name="com.lazyxu.film.HotFilmActivity" />
     </application>
 </manifest>

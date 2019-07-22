@@ -13,7 +13,7 @@ import android.support.annotation.StringRes;
  **/
 
 public interface IHeaderBuilder {
-	HeaderBuilder mContentViewId(@LayoutRes int layoutId);
+	HeaderBuilder layoutId(@LayoutRes int layoutId);
 
 	HeaderBuilder menuId(int menuId);
 

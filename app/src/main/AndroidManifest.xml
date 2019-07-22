@@ -19,7 +19,7 @@
         android:name=".BaseApplication"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label,android:theme,android:allowBackup,android:supportsRtl">
-        <activity android:name=".MainActivity">
+        <activity android:name=".dagger.DaggerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

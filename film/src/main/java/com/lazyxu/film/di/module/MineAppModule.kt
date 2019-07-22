@@ -11,8 +11,6 @@ import retrofit2.Retrofit
 
 @Module
 class MineAppModule {
-
-
     /**
      * @return FilmApiService 供FilmRepositoryImp中使用
      */

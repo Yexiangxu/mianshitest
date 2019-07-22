@@ -2,6 +2,7 @@ package com.lazyxu.base.di.module
 
 
 import android.app.Application
+import android.content.Context
 import android.util.Log
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.lazyxu.base.BuildConfig
@@ -23,6 +24,12 @@ import javax.inject.Singleton
  */
 @Module
 open class HttpModule {
+    @Provides
+    @Singleton
+    internal fun provideContext(application: Application): Context {
+        return application
+    }
+
     /**
      * @return HttpLoggingInterceptor 供下面 provideOkHttpClient 方法使用
      */

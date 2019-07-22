@@ -16,5 +16,3 @@ open class AppModule(private val application: Application) {
     @Provides
     open fun provideApplication() = application
 }
-
-

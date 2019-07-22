@@ -10,7 +10,7 @@ public class HeaderBuilder implements IHeaderBuilder {
 
 
 	@Override
-	public HeaderBuilder mContentViewId(int layoutId) {
+	public HeaderBuilder layoutId(int layoutId) {
 		headToolbar.setLayoutId(layoutId);
 		return this;
 	}
