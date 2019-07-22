@@ -24,7 +24,6 @@ object KotlinHelloWorld {
         val s2 = "${s1.replace("is", "was")}, but now is $a" //a was 1, but now is 2
 
         val b: Int//如果不在声明时初始化则必须提供变量类型
-        b = 3
 
 
         if (args.size < 2) {
