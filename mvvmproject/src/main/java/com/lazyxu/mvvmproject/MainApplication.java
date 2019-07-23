@@ -4,7 +4,6 @@ import android.app.Activity;
 
 import com.lazyxu.base.base.BaseApplication;
 import com.lazyxu.base.di.module.AppModule;
-import com.lazyxu.base.di.module.HttpModule;
 import com.lazyxu.mvvmproject.di.component.DaggerAppComponent;
 
 import javax.inject.Inject;
@@ -27,10 +26,6 @@ public class MainApplication extends BaseApplication implements HasActivityInjec
     @Override
     public void onCreate() {
         super.onCreate();
-        DaggerAppComponent.builder().appModule(new AppModule(this)).httpModule(new HttpModule()).build().inject(this);
-
-
+        DaggerAppComponent.builder().application(this).build().inject(this);
     }
-
-
 }

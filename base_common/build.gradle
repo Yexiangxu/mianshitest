@@ -51,12 +51,12 @@ dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //rx系列
     api 'io.reactivex.rxjava2:rxjava:2.2.7'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.0'
     api 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
     api 'com.squareup.retrofit2:converter-gson:2.5.0'
     api 'com.jakewharton.rxbinding2:rxbinding:2.2.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    api 'com.squareup.okhttp3:okhttp:3.12.1'
     //di
     api 'com.google.dagger:dagger:2.19'
     kapt 'com.google.dagger:dagger-compiler:2.19'
@@ -65,14 +65,14 @@ dependencies {
     kapt 'com.google.dagger:dagger-android-processor:2.19'
 
     //字体设置 https://github.com/chrisjenx/Calligraphy
-    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+    api 'uk.co.chrisjenx:calligraphy:2.3.0'
 
     //调试库
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
-    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+    api 'com.facebook.stetho:stetho-okhttp3:1.5.0'
     api 'com.orhanobut:logger:2.2.0'
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
-    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+    debugApi 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
 //    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-alpha-2'
 
     //arouter
@@ -87,7 +87,7 @@ dependencies {
     api 'android.arch.persistence.room:rxjava2:1.1.1'
     //glide
     api 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    kapt 'com.github.bumptech.glide:compiler:4.9.0'
 
     //UI
     //导航栏设置 https://github.com/gyf-dev/ImmersionBar

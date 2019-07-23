@@ -23,12 +23,8 @@ import javax.inject.Singleton
  * @author xuyexiang
  */
 @Module
-open class HttpModule {
-    @Provides
-    @Singleton
-    internal fun provideContext(application: Application): Context {
-        return application
-    }
+ class HttpModule {
+
 
     /**
      * @return HttpLoggingInterceptor 供下面 provideOkHttpClient 方法使用
@@ -60,7 +56,7 @@ open class HttpModule {
      */
     @Singleton
     @Provides
-    open fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
                 .baseUrl(Config.HOST)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
