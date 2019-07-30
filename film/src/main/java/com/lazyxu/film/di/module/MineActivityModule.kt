@@ -1,7 +1,7 @@
 package com.lazyxu.film.di.module
 
 
-import com.lazyxu.film.HotFilmActivity
+import com.lazyxu.film.ui.HotFilmActivity
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

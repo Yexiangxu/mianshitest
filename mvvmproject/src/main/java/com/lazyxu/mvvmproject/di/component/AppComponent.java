@@ -4,8 +4,8 @@ import android.app.Application;
 
 import com.lazyxu.base.di.module.AppModule;
 import com.lazyxu.base.di.module.HttpModule;
-import com.lazyxu.film.di.module.MineActivityModule;
-import com.lazyxu.film.di.module.MineAppModule;
+import com.lazyxu.user.di.MineActivityModule;
+import com.lazyxu.user.di.MineAppModule;
 import com.lazyxu.mvvmproject.MainApplication;
 
 import javax.inject.Singleton;

@@ -1,1 +1,1 @@
-include ':app', ':apt_compiler', ':apt_annotation', ':mvvmproject', ':base_common', ':film'
+include ':app', ':apt_compiler', ':apt_annotation', ':mvvmproject', ':base_common', ':film', ':user'

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lazyxu.film">
+    package="com.lazyxu.user">
 
     <application>
-        <activity android:name="com.lazyxu.film.ui.HotFilmActivity" />
+        <activity android:name="com.lazyxu.user.ui.login.LoginActivity" />
     </application>
 </manifest>

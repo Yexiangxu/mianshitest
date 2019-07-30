@@ -1,4 +1,4 @@
-package com.lazyxu.film
+package com.lazyxu.film.ui
 
 import android.annotation.SuppressLint
 import android.databinding.DataBindingUtil
@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.lazyxu.base.arouter.RouterUrl
+import com.lazyxu.film.R
 import com.lazyxu.film.data.FilmUseCase
 import com.lazyxu.film.databinding.ActivityHotfilmBinding
 import dagger.android.AndroidInjection

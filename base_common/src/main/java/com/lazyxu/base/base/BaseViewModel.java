@@ -13,25 +13,19 @@ import io.reactivex.disposables.Disposable;
  * FIXME
  */
 public class BaseViewModel extends AndroidViewModel {
-    private CompositeDisposable mCompositeDisposable;
+    private CompositeDisposable mCompositeDisposable = new CompositeDisposable();
 
     public BaseViewModel(Application application) {
         super(application);
-        mCompositeDisposable = new CompositeDisposable();
     }
 
     public void addSubscribe(Disposable disposable) {
-        if (mCompositeDisposable == null) {
-            mCompositeDisposable = new CompositeDisposable();
-        }
         mCompositeDisposable.add(disposable);
     }
 
     @Override
     public void onCleared() {
-        if (this.mCompositeDisposable != null && !mCompositeDisposable.isDisposed()) {
-            this.mCompositeDisposable.clear();
-        }
+        mCompositeDisposable.clear();
         super.onCleared();
     }
 }

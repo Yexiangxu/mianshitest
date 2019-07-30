@@ -1,4 +1,4 @@
-package com.lazyxu.film;
+package com.lazyxu.film.ui;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.lazyxu.film.BR;
+import com.lazyxu.film.R;
 import com.lazyxu.film.data.entity.FilmItemEntity;
 
 import java.util.List;

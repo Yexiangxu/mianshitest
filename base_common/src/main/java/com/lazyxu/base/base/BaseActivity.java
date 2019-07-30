@@ -37,7 +37,7 @@ public abstract class BaseActivity<V extends BaseViewModel, T extends ViewDataBi
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        AndroidInjection.inject(this);
+        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         //防止首次安装按home键重新启动
         if (!isTaskRoot()) {
