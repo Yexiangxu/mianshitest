@@ -7,7 +7,7 @@ import dagger.android.ContributesAndroidInjector
 
 
 @Module
-abstract class MineActivityModule {
+abstract class UserActivityModule {
     @ContributesAndroidInjector
     internal abstract fun bindLoginActivity(): LoginActivity
 

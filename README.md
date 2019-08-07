@@ -30,5 +30,7 @@ java和kotlin相互转化
 
 ####kotlin注意事项
 
+了解viewmodel原理结合people_mvvm
+
                        
 

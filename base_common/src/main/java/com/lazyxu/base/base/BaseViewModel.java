@@ -3,6 +3,8 @@ package com.lazyxu.base.base;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 
+import javax.inject.Inject;
+
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
@@ -13,6 +15,7 @@ import io.reactivex.disposables.Disposable;
  * FIXME
  */
 public class BaseViewModel extends AndroidViewModel {
+
     private CompositeDisposable mCompositeDisposable = new CompositeDisposable();
 
     public BaseViewModel(Application application) {

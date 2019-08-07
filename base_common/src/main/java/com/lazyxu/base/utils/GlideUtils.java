@@ -22,7 +22,7 @@ public class GlideUtils {
         Glide.with(imageView.getContext())
                 .load(url)
                 .transition(DrawableTransitionOptions.withCrossFade(500))
-                .override((int) CommonUtils.getDimens(R.dimen.movie_detail_width), (int) CommonUtils.getDimens(R.dimen.movie_detail_height))
+                .override((int) CommonUtils.INSTANCE.getDimens(R.dimen.movie_detail_width), (int) CommonUtils.INSTANCE.getDimens(R.dimen.movie_detail_height))
                 .placeholder(R.drawable.img_default_meizi)
                 .error(R.drawable.img_default_meizi)
                 .into(imageView);

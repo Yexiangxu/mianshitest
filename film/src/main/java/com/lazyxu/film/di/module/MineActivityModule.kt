@@ -10,7 +10,7 @@ import dagger.android.ContributesAndroidInjector
  * Created by amitshekhar on 14/09/17.
  */
 @Module
-abstract class MineActivityModule {
+abstract class FilmActivityModule {
     @ContributesAndroidInjector
     internal abstract fun bindHotFilmActivity(): HotFilmActivity
 

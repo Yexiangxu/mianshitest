@@ -12,6 +12,7 @@ import javax.inject.Inject;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
+
 /**
  * User: Lazy_xu
  * Data: 2019/07/22
@@ -22,9 +23,11 @@ public class BaseApplication extends Application {
 //    @Inject
 //    CalligraphyConfig calligraphyConfig;
     private static BaseApplication MINSTATCE = null;
+
     public static BaseApplication getInstance() {
         return MINSTATCE;
     }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -36,6 +39,7 @@ public class BaseApplication extends Application {
         ARouter.init(this);
 
     }
+
     private void initDebug() {
         if (BuildConfig.DEBUG) {
             // 这两行必须写在init之前，否则这些配置在init过程中将无效

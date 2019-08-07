@@ -4,20 +4,19 @@ import com.lazyxu.film.data.FilmApiService
 import com.lazyxu.film.data.FilmRepository
 import com.lazyxu.film.data.FilmRepositoryImp
 import com.lazyxu.film.data.FilmUseCase
-import com.lazyxu.film.di.scope.ActivityScope
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
-class MineAppModule {
+class FilmAppModule {
     /**
      * @return FilmApiService 供FilmRepositoryImp中使用
      */
     @Singleton
     @Provides
-    fun provideMineApiService(retrofit: Retrofit): FilmApiService {
+    fun provideFilmApiService(retrofit: Retrofit): FilmApiService {
         return retrofit.create(FilmApiService::class.java)
     }
 
@@ -26,7 +25,7 @@ class MineAppModule {
      */
     @Singleton
     @Provides
-    fun provideMineRepositoryImp(mineRepositoryImp: FilmRepositoryImp): FilmRepository {
+    fun provideFilmRepositoryImp(mineRepositoryImp: FilmRepositoryImp): FilmRepository {
         return mineRepositoryImp
     }
 
@@ -35,7 +34,7 @@ class MineAppModule {
      */
     @Singleton
     @Provides
-    fun provideMineUseCase(filmRepository: FilmRepository): FilmUseCase {
+    fun provideFilmUseCase(filmRepository: FilmRepository): FilmUseCase {
         return FilmUseCase(filmRepository)
     }
 }

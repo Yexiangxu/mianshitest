@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.lazyxu.base.R;
 import com.lazyxu.base.base.BaseApplication;
 
-public class ToastUtil {
+public class AppToast {
     private static long oneTime = 0;
     private static long twoTime = 0;
     private static String oldMsg = "";

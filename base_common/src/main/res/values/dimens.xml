@@ -3,4 +3,6 @@
     <dimen name="et_height">46dp</dimen>
     <dimen name="movie_detail_width">125dp</dimen>
     <dimen name="movie_detail_height">165dp</dimen>
+    <dimen name="etlogin_height">45dp</dimen>
+
 </resources>

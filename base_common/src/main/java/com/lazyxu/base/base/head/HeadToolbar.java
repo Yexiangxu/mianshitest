@@ -19,7 +19,6 @@ public class HeadToolbar {
 
 
     public void setMenuId(int menuId) {
-
         this.menuId = menuId;
     }
 
@@ -68,5 +67,9 @@ public class HeadToolbar {
 
     public void setLayoutId(int layoutId) {
         this.layoutId = layoutId;
+    }
+
+    public int getLayoutId() {
+        return this.layoutId;
     }
 }

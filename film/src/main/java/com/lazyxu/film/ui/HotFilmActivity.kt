@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.lazyxu.base.arouter.RouterUrl
+import com.lazyxu.base.utils.RouterUrl
 import com.lazyxu.film.R
 import com.lazyxu.film.data.FilmUseCase
 import com.lazyxu.film.databinding.ActivityHotfilmBinding
@@ -27,7 +27,7 @@ class HotFilmActivity : AppCompatActivity() {
 
     @SuppressLint("CheckResult")
     override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
+        AndroidInjection.inject(this@HotFilmActivity)
         super.onCreate(savedInstanceState)
         mDatabinding = DataBindingUtil.setContentView(this, R.layout.activity_hotfilm)
         mineUseCase.hotFilm().subscribe({ mtimeFilmeEntity ->

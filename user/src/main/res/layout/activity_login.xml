@@ -4,9 +4,12 @@
     <data>
 
         <variable
+            name="view"
+            type="com.lazyxu.user.ui.login.LoginActivity" />
+
+        <variable
             name="viewModel"
             type="com.lazyxu.user.ui.login.LoginViewModel" />
-
     </data>
 
     <LinearLayout
@@ -18,19 +21,23 @@
             android:id="@+id/etUserName"
             android:layout_width="match_parent"
             android:layout_height="@dimen/etlogin_height"
-            android:hint="请输入用户名"
-            android:text="@={}" />
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:text="@={viewModel.userPhone}" />
 
         <EditText
             android:id="@+id/etUserSecret"
             android:layout_width="match_parent"
             android:layout_height="@dimen/etlogin_height"
-            android:hint="请输入用户密码" />
+            android:hint="请输入用户密码"
+            android:text="@={viewModel.userPassword}" />
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="@{() -> view.onClick(1)}"
             android:text="登录" />
     </LinearLayout>
 </layout>

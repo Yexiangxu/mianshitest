@@ -3,7 +3,6 @@ package com.lazyxu.mvvmproject;
 import android.app.Activity;
 
 import com.lazyxu.base.base.BaseApplication;
-import com.lazyxu.base.di.module.AppModule;
 import com.lazyxu.mvvmproject.di.component.DaggerAppComponent;
 
 import javax.inject.Inject;

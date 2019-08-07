@@ -14,14 +14,14 @@ interface UserApiService {
      * @param password 密码
      */
     @FormUrlEncoded
-    @POST("user/login")
+    @POST("https://www.wanandroid.com/user/login")
     fun login(@Field("username") username: String, @Field("password") password: String): Flowable<LoginBean>
 
     /**
      * 玩安卓注册
      */
     @FormUrlEncoded
-    @POST("user/register")
+    @POST("https://www.wanandroid.com/user/register")
     fun register(@Field("username") username: String, @Field("password") password: String, @Field("repassword") repassword: String): Flowable<LoginBean>
 
 
