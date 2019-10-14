@@ -2,7 +2,6 @@ package com.lazyxu.base.di.module
 
 
 import android.app.Application
-import android.content.Context
 import android.util.Log
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.lazyxu.base.BuildConfig
@@ -23,7 +22,7 @@ import javax.inject.Singleton
  * @author xuyexiang
  */
 @Module
- class HttpModule {
+class HttpModule {
 
 
     /**
@@ -56,7 +55,7 @@ import javax.inject.Singleton
      */
     @Singleton
     @Provides
-     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
                 .baseUrl(Config.HOST)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

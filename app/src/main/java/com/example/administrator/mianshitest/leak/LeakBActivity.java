@@ -1,24 +1,12 @@
 package com.example.administrator.mianshitest.leak;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Button;
 
 import com.example.administrator.mianshitest.R;
-
-import java.util.concurrent.TimeUnit;
-
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 
 public class LeakBActivity extends AppCompatActivity {
     private Button showButton;
@@ -35,16 +23,10 @@ public class LeakBActivity extends AppCompatActivity {
             Intent intent = new Intent(LeakBActivity.this, LeakCActivity.class);
             startActivity(intent);
         });
-//        LeakTest.getInstance().setmTextView(showButton);
+        LeakTest.getInstance().setmTextView(showButton);
 //        context = this;
 //        initData();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-            }
-        }, 15000);
     }
-
 
 
 //    private void initData() {

@@ -12,12 +12,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.lazyxu.base.base.BaseViewModel;
 import com.lazyxu.base.base.IBaseView;
 import com.lazyxu.base.base.head.HeadToolbar;
+import com.lazyxu.base.utils.ActivityStack;
 
 import javax.inject.Inject;
 
@@ -38,6 +41,11 @@ public abstract class BaseActivity<V extends AndroidViewModel, B extends ViewDat
     private int mLayoutId;
     private int mToolbarTitle;
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityStack.Companion.getInstance().removeActivity(this);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,6 +62,9 @@ public abstract class BaseActivity<V extends AndroidViewModel, B extends ViewDat
                 return;
             }
         }
+        ActivityStack.Companion.getInstance().addActivity(this);
+
+
         initHeader();
         initDatabinding();
         setStatusbar();
@@ -130,4 +141,7 @@ public abstract class BaseActivity<V extends AndroidViewModel, B extends ViewDat
         }
         return false;
     }
+
+
+
 }

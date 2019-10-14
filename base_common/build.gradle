@@ -43,6 +43,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    //==================所有项目必须项=========================
+    //statusbar设置导航栏、电池栏、电池栏字体颜色 https://github.com/gyf-dev/ImmersionBar
+//    api 'com.gyf.immersionbar:immersionbar:3.0.0'
+//    api 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
+
+
     //base
     api 'com.android.support:appcompat-v7:28.0.0'
     api "com.android.support:recyclerview-v7:28.0.0"

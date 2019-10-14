@@ -8,8 +8,6 @@ import android.arch.persistence.room.Query;
 
 import com.lazyxu.user.data.entity.db.User;
 
-import java.util.List;
-
 /**
  * User: Lazy_xu
  * Data: 2019/08/05

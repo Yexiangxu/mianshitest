@@ -31,14 +31,15 @@ constructor(application: Application, private val userUseCase: UserUseCase) : Ba
             return data
         } else {
             addSubscribe(userUseCase.login(userPhone.get()!!, userPassword.get()!!).subscribe({ loginBean ->
-                userUseCase.queryUser().subscribe({ user ->
-                    if (user == null ) {
-                        Log.i("LoginViewModel", "user=${user.toString()}")
-                    } else {
-                        Log.i("LoginViewModel", "user=$user")
-                    }
-                })
-                userUseCase.insertUser(loginBean.data)
+
+//                userUseCase.queryUser().subscribe({ user ->
+//                    if (user == null ) {
+//                        Log.i("LoginViewModel", "user=${user.toString()}")
+//                    } else {
+//                        Log.i("LoginViewModel", "user=$user")
+//                    }
+//                })
+//                userUseCase.insertUser(loginBean.data)
                 data.value = true
             }, { throwable ->
                 Log.i("LoginViewModel", "throwable=$throwable")

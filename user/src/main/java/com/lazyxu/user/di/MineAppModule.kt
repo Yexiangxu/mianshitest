@@ -59,7 +59,7 @@ class UserAppModule {
     internal fun provideAppDataBase(application: Application): com.lazyxu.user.data.db.AppDatabase {
         return Room.databaseBuilder(application, AppDatabase::class.java, AppConstants.DB_NAME)
                 .fallbackToDestructiveMigration()//数据库的内容都被清空
-//                .addMigrations(MIGRATION_1_2)
+                .addMigrations(MIGRATION_1_2)
                 .build()
     }
 

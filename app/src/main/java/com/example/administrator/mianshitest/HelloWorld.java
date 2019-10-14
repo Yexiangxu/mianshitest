@@ -1,15 +1,11 @@
 package com.example.administrator.mianshitest;
 
 
-import com.example.administrator.mianshitest.cache.LRU;
-
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.Set;
 
 /**
  * Date: 2019/3/6 20:10
@@ -18,76 +14,55 @@ import java.util.concurrent.TimeUnit;
  */
 public class HelloWorld {
     public static void main(String[] args) {
-
-//        LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
-//        map.put("语文", 1);
-//        map.put("数学", 2);
-//        map.put("英语", 3);
-//        map.put("历史", 4);
-//        map.put("政治", 5);
-//        map.put("地理", 6);
-//        map.put("生物", 7);
-//        map.put("化学", 8);
-//        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-//            System.out.println(entry.getKey() + ": " + entry.getValue());
-//        }
-        HashMap<String, Integer> hashMap = new HashMap();
-        hashMap.put("语文", 4);
-        hashMap.put("数学", 2);
-        hashMap.put("英语", 3);
-        hashMap.put(null, 6);
-        for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
-    }
-
-    private static void testthread() {
-        //创建基本线程池
-        final ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(3, 5, 1, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(100));
-        for (int i = 0; i < 30; i++) {
-            final int finali = i;
-            Runnable runnable = new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Thread.sleep(2000);
-//                        System.out.println("run: "+finali);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            };
-            threadPoolExecutor.execute(runnable);
+        Map<String, Integer> map = new HashMap<>();
+        //1. 向HashMap添加数据
+        map.put("Android", 1);
+        map.put("IOS", 2);
+        //2. 获取 HashMap 的某个数据
+        System.out.println("key = Android值为：" + map.get("Android"));
+        /**
+         * 获取 HashMap 的全部数据：遍历HashMap
+         * 方法1：获得key-value的Set集合再遍历
+         *      1. 通过for循环
+         *      2. 通过迭代器：先获得key-value对（Entry）的Iterator，再循环遍历
+         * 方法2：获得key的Set集合再遍历
+         *      1. 通过for循环
+         *      2. 通过迭代器：先获得key的Iterator，再循环遍历
+         */
+        System.out.println("方法1");
+        Set<Map.Entry<String, Integer>> entrySet = map.entrySet();
+        for (Map.Entry<String, Integer> entry : entrySet) {
+            System.out.print(entry.getKey());
+            System.out.println(entry.getValue());
         }
 
-        ExecutorService fixedThreadPool = Executors.newSingleThreadExecutor();
-        for (int i = 1; i <= 50; i++) {
-            final int index = i;
-            fixedThreadPool.execute(new Runnable() {
-                @Override
-                public void run() {
-                    String threadName = Thread.currentThread().getName();
-//                    System.out.println("线程：" + threadName + ",正在执行第" + index + "个任务");
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
+        Iterator iter1 = entrySet.iterator();
+        while (iter1.hasNext()) {
+            Map.Entry entry = (Map.Entry) iter1.next();
+            System.out.print((String) entry.getKey());
+            System.out.println(entry.getValue());
         }
 
-
-        LRU<String, Integer> lru = new LRU<>(3);
-        for (int i = 0; i < 50; i++) {
-            lru.put("aa" + i, i);
-//            lru.print();
+        System.out.println("方法2");
+        Set<String> keySet = map.keySet();
+        for (String key : keySet) {
+            System.out.print(key);
+            System.out.println(map.get(key));
         }
 
-    }
+        Iterator iter2 = keySet.iterator();
+        String key;
+        while (iter2.hasNext()) {
+            key = (String) iter2.next();
+            System.out.print(key);
+            System.out.println(map.get(key));
+        }
 
-    public void fun1() {
-        Object object = new Object();
-        Object[] objArr = new Object[1000000];
+        System.out.println("方法3");
+        Collection valueSet = map.values();
+        Iterator iter3 = valueSet.iterator();
+        while (iter3.hasNext()) {
+            System.out.println(iter3.next());
+        }
     }
 }

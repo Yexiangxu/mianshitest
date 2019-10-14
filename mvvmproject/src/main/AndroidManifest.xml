@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:label,android:theme,android:allowBackup,android:supportsRtl"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

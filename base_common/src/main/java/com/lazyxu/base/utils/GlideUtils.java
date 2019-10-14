@@ -5,6 +5,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.signature.ObjectKey;
 import com.lazyxu.base.R;
 
 /**
@@ -25,6 +26,7 @@ public class GlideUtils {
                 .override((int) CommonUtils.INSTANCE.getDimens(R.dimen.movie_detail_width), (int) CommonUtils.INSTANCE.getDimens(R.dimen.movie_detail_height))
                 .placeholder(R.drawable.img_default_meizi)
                 .error(R.drawable.img_default_meizi)
+                .signature(new ObjectKey("xxx"))
                 .into(imageView);
     }
 }
