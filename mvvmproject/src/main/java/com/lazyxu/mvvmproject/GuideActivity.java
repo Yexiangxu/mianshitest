@@ -1,9 +1,11 @@
 package com.lazyxu.mvvmproject;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import okhttp3.OkHttpClient;
@@ -16,7 +18,7 @@ import okhttp3.Response;
  * Description:
  * FIXME
  */
-public class GuideActivity extends AppCompatActivity implements View.OnClickListener {
+public class GuideActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,4 +31,5 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
 
     }
+
 }

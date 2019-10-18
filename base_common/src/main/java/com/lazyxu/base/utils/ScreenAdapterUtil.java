@@ -23,15 +23,15 @@ public class ScreenAdapterUtil {
     private static float WIDTH;
 
     public static void setDensity(@NonNull final Application application, float width) {
+        //系统的屏幕尺寸
         appDisplayMetrics = application.getResources().getDisplayMetrics();
         WIDTH = width;
         registerActivityLifecycleCallbacks(application);
-
         if (appDensity == 0) {
-            //初始化的时候赋值
+            //获取当前设备的基准比例
             appDensity = appDisplayMetrics.density;
+            //字体的缩放因子，正常情况下和density相等，但是调节系统字体大小后会改变这个值
             appScaledDensity = appDisplayMetrics.scaledDensity;
-
             //添加字体变化的监听
             application.registerComponentCallbacks(new ComponentCallbacks() {
                 @Override
@@ -49,30 +49,27 @@ public class ScreenAdapterUtil {
         }
     }
 
-
     private static void setDefault(Activity activity) {
         setAppOrientation(activity);
     }
 
     private static void setAppOrientation(@Nullable Activity activity) {
-
         float targetDensity = 0;
         try {
+            //widthPixels：屏幕宽度 eg:1080
             targetDensity = appDisplayMetrics.widthPixels / WIDTH;
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-
+        //通过一个比例确定字体的density
         float targetScaledDensity = targetDensity * (appScaledDensity / appDensity);
         int targetDensityDpi = (int) (160 * targetDensity);
 
         /**
-         *
          * 最后在这里将修改过后的值赋给系统参数
-         *
          * 只修改Activity的density值
          */
-
+        assert activity != null;
         DisplayMetrics activityDisplayMetrics = activity.getResources().getDisplayMetrics();
         activityDisplayMetrics.density = targetDensity;
         activityDisplayMetrics.scaledDensity = targetScaledDensity;

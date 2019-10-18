@@ -15,6 +15,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.net.Proxy
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -42,6 +43,7 @@ class HttpModule {
     @Provides
     fun provideOkHttpClient(application: Application, httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
+//                .proxy(Proxy.NO_PROXY) //禁止代理防止抓包
                 .cache(Cache(application.cacheDir, (1024 * 1024 * 50).toLong()))
                 .connectTimeout(120, TimeUnit.SECONDS)
                 .writeTimeout(120, TimeUnit.SECONDS)

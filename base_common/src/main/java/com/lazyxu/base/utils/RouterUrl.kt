@@ -10,4 +10,5 @@ object RouterUrl {
 
     const val LOGIN = "/user/login"
     const val HOTFILM = "/film/hot"
+    const val WEBVIEWMAIN = "/base/webviewmain"
 }

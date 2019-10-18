@@ -17,7 +17,7 @@ public class LruCache<K, V> {
         }
         this.maxSize = maxSize;
         //创建了 LinkedHashMap
-        this.map = new LinkedHashMap<K, V>(0, 0.75f, true);
+        this.map = new LinkedHashMap<>(0, 0.75f, true);
     }
 
     /**

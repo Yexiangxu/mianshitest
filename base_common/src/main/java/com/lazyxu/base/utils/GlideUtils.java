@@ -11,7 +11,7 @@ import com.lazyxu.base.R;
 /**
  * User: xuyexiang
  * Date: 2019/06/13
- * Description:
+ * Description: 使用于本地图片时，禁用Glide缓存功能，例如skipMemoryCache方法和diskCacheStrategy方法。
  * FIXME
  */
 public class GlideUtils {

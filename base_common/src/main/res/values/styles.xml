@@ -2,7 +2,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:textColorPrimary">@color/statusbar_maincolor</item> <!--返回键处文字颜色-->
+        <item name="android:textColorPrimary">@color/title_maincolor</item> <!--返回键处文字颜色-->
         <item name="colorPrimary">@color/statusbar_maincolor</item>        <!--工具栏(标题栏)颜色-->
         <item name="colorAccent">@color/statusbar_maincolor
         </item>        <!--输入框 checkbox等获取焦点状态下颜色-->
@@ -44,5 +44,11 @@
         <item name="minHeight">48dp</item>
         <item name="maxHeight">48dp</item>
         <item name="indicatorName">LoadingIndicator</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@color/colorAccent</item> <!--  menu颜色-->
+        <item name="android:textSize">16sp</item> <!--  menu字体大小-->
+        <item name="android:textColor">@color/colorAccent</item> <!--  menu字体大小-->
     </style>
 </resources>

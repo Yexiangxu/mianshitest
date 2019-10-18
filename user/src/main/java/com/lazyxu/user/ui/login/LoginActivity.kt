@@ -21,7 +21,11 @@ import com.lazyxu.user.databinding.ActivityLoginBinding
 @Route(path = RouterUrl.LOGIN)
 class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
     override fun getHeadToolbar(): HeadToolbar {
-        return HeaderBuilder().layoutId(R.layout.activity_login).build()
+        return HeaderBuilder()
+                .layoutId(R.layout.activity_login)
+                .titleBar(R.id.commoninclude_toolbar)
+                .toolbarTitle(R.string.login)
+                .build()
     }
 
     override fun getBindingVariable(): Int {
@@ -31,6 +35,7 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
     override fun onBindViewModel(): Class<LoginViewModel> {
         return LoginViewModel::class.java
     }
+
 
     override fun initDatas() {
         mDataBinding.view = this@LoginActivity
@@ -43,7 +48,7 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
     private fun loginSuc(aBoolean: Boolean?) {
         if (aBoolean != null && aBoolean) {
             AppToast.show("登录成功")
-            ARouter.getInstance().build(RouterUrl.HOTFILM).navigation()
+            ARouter.getInstance().build(RouterUrl.WEBVIEWMAIN).navigation()
         }
     }
 }

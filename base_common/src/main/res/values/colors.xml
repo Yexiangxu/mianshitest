@@ -12,4 +12,10 @@
     <color name="select_maincolor">#D81B60</color>
     <color name="theme_colorControlHighlight">#cfd8dc</color>
     <color name="theme_colorControlNormal">#ffffff</color>
+
+    <color name="shape1">#5d8df7</color>
+    <color name="shape2">#5EB9F8</color>
+    <color name="shape3">#5CC2F8</color>
+    <color name="title_maincolor">#ffffff</color>
+    <color name="scrollbarClolr">#7d7d7d7d</color>
 </resources>

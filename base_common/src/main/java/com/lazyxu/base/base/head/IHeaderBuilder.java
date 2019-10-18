@@ -1,6 +1,7 @@
 package com.lazyxu.base.base.head;
 
 import android.support.annotation.ColorRes;
+import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
 
@@ -14,6 +15,9 @@ import android.support.annotation.StringRes;
 
 public interface IHeaderBuilder {
 	HeaderBuilder layoutId(@LayoutRes int layoutId);
+	HeaderBuilder titleBar(@IdRes int titleBar);
+
+
 
 	HeaderBuilder menuId(int menuId);
 
@@ -29,7 +33,6 @@ public interface IHeaderBuilder {
 
 	HeaderBuilder loadingTargetView(@LayoutRes int loadingTargetView);
 
-	HeaderBuilder statusBarColor(@ColorRes int statusBarColor);
 
 	HeaderBuilder hideBack(boolean hideBack);
 

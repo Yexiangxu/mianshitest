@@ -1,18 +1,38 @@
 所有项目必须
-1. 使用今日头条屏幕适配方案
-2. 使用 ImmersionBar 处理 StatusBar
- implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+
+1. **androidX配置**(`Refactor -> Migrate to AndroidX` 一键迁移)
+2. **使用今日头条屏幕适配方案**
+3. **使用 [ImmersionBar](https://www.jianshu.com/p/2a884e211a62) 处理 StatusBar**（可处理导航栏、电池栏、电池栏文字颜色、全面屏、刘海屏）
+   >注意`AndroidManifest.xml`中需要先添加下面配置
+   >```
+   >        <!-- 适配全面屏 -->
+   >        <meta-data
+   >            android:name="android.max_aspect"
+   >            android:value="2.4" />
+   >        <!-- 适配华为(hua wei)刘海屏 -->
+   >        <meta-data
+   >            android:name="android.notch_support"
+   >            android:value="true" />
+   >        <!-- 适配小米(xiao mi)刘海屏 -->
+   >        <meta-data
+   >            android:name="notch.config"
+   >            android:value="portrait|landscape" />
+   > ```
+   
+ 
 
 
 
 
 
 
-####kotlin配置
+#### kotlin配置
+1. `apply plugin: 'kotlin-android-extensions'`：不需要写`findviewfindid`直接引用XML控件`id`即可
+
 //必须
 apply plugin: 'kotlin-android'
-//快捷的findviewfindid操作，建议加上
-apply plugin: 'kotlin-android-extensions'
+//，建议加上
+
 //kotlin使用编译注解
 apply plugin: 'kotlin-kapt'
 android {

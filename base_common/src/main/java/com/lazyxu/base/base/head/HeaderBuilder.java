@@ -1,10 +1,5 @@
 package com.lazyxu.base.base.head;
 
-/**
- * Author: wendjia
- * Time: 2018\9\4 0004
- * Description:
- **/
 public class HeaderBuilder implements IHeaderBuilder {
 	private HeadToolbar headToolbar = new HeadToolbar();
 
@@ -14,6 +9,14 @@ public class HeaderBuilder implements IHeaderBuilder {
 		headToolbar.setLayoutId(layoutId);
 		return this;
 	}
+	@Override
+	public HeaderBuilder titleBar(int titleBar) {
+		headToolbar.setTitleBar(titleBar);
+		return this;
+	}
+
+
+
 
 	@Override
 	public HeaderBuilder menuId(int menuId) {
@@ -57,11 +60,7 @@ public class HeaderBuilder implements IHeaderBuilder {
 		return this;
 	}
 
-	@Override
-	public HeaderBuilder statusBarColor(int statusBarColor) {
-		headToolbar.setStatusBarColor(statusBarColor);
-		return this;
-	}
+
 
 	@Override
 	public HeaderBuilder hideBack(boolean hideBack) {

@@ -2,8 +2,10 @@ package com.lazyxu.base.utils
 
 import android.app.Activity
 import android.content.Context
+import android.os.Process
 import android.view.inputmethod.InputMethodManager
 import java.util.*
+import kotlin.system.exitProcess
 
 /**
  * User:Lazy_xu
@@ -37,6 +39,47 @@ class ActivityStack private constructor() {
         }
     }
 
+    fun popAllActivity(isForceClose: Boolean) {
+        while (this.mActivities.size > 0) {
+            this.popActivity()
+        }
+        if (isForceClose) {
+            Process.killProcess(Process.myPid())
+            exitProcess(-1)
+        }
+    }
+
+    private fun popActivity() {
+        if (!this.mActivities.isEmpty()) {
+            val activity: Activity? = this.mActivities.pop() as Activity
+            activity?.finish()
+//            (mActivities.pop() as Activity).finish()
+        }
+    }
+
+    //    public void popActivity() {
+    //        if (this.mActivities != null && !this.mActivities.isEmpty()) {
+    //            Activity activity = (Activity) this.mActivities.pop();
+    //            if (activity != null) {
+    //                activity.finish();
+    //                activity = null;
+    //            }
+    //        }
+    //
+    //    }
+
+//    public void popAllActivity(boolean isForceClose) {
+//        while (this.mActivities.size() > 0) {
+//            this.popActivity();
+//        }
+//
+//        if (isForceClose) {
+//            Process.killProcess(Process.myPid());
+//            System.exit(-1);
+//        }
+//
+//    }
+
     private fun hideSoftKeyBoard(activity: Activity) {
         val localView = activity.currentFocus
         val imm = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -61,32 +104,13 @@ class ActivityStack private constructor() {
     //
     //
     //
-    //    public void popActivity() {
-    //        if (this.mActivities != null && !this.mActivities.isEmpty()) {
-    //            Activity activity = (Activity) this.mActivities.pop();
-    //            if (activity != null) {
-    //                activity.finish();
-    //                activity = null;
-    //            }
-    //        }
-    //
-    //    }
+
     //    public Activity topActivity() {
     //        return this.mActivities.empty() ? null : (Activity) this.mActivities.lastElement();
     //    }
     //
     //
-    //    public void popAllActivity(boolean isForceClose) {
-    //        while (this.mActivities.size() > 0) {
-    //            this.popActivity();
-    //        }
-    //
-    //        if (isForceClose) {
-    //            Process.killProcess(Process.myPid());
-    //            System.exit(-1);
-    //        }
-    //
-    //    }
+
     //
     //    public void popAllActivityExceptTop() {
     //        while (this.mActivities.size() > 1) {

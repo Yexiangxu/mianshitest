@@ -9,16 +9,15 @@ import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.ImageView;
 
-import com.lazyxu.base.base.BaseViewModel;
-import com.lazyxu.base.base.IBaseView;
+import com.gyf.immersionbar.ImmersionBar;
 import com.lazyxu.base.base.head.HeadToolbar;
 import com.lazyxu.base.utils.ActivityStack;
 
@@ -39,7 +38,12 @@ public abstract class BaseActivity<V extends AndroidViewModel, B extends ViewDat
     ViewModelProvider.Factory mViewModelFactory;
     public B mDataBinding;
     private int mLayoutId;
+    private int mTitleBar;
+    private Toolbar mToolbar;
     private int mToolbarTitle;
+    private int mBackDrawable;
+    private int mToolbarTitleColor;
+
 
     @Override
     protected void onDestroy() {
@@ -67,14 +71,43 @@ public abstract class BaseActivity<V extends AndroidViewModel, B extends ViewDat
 
         initHeader();
         initDatabinding();
-        setStatusbar();
+        initToolbar();
         initDatas();
     }
+
+    private void initToolbar() {
+        if (mTitleBar != -1) {
+            setStatusbar();
+            if (findViewById(mTitleBar) instanceof Toolbar) {
+                mToolbar = findViewById(mTitleBar);
+                setSupportActionBar(mToolbar);
+                if (getSupportActionBar() != null) {
+                    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                    //设置返回图标
+                    if (mBackDrawable != -1) {
+                        getSupportActionBar().setHomeAsUpIndicator(mBackDrawable);
+                    }
+                    mToolbar.setNavigationOnClickListener(v -> finish());
+//                  getSupportActionBar().setDisplayShowTitleEnabled(false);//隐藏居左标题,暂留用来处理标题居中和居左两种情况
+                    if (mToolbarTitle != -1) {
+                        getSupportActionBar().setTitle(mToolbarTitle);
+                    }
+                    if (mToolbarTitleColor != -1) {
+                        mToolbar.setTitleTextColor(ContextCompat.getColor(this, mToolbarTitleColor));
+                    }
+                }
+            }
+        }
+    }
+
 
     private void initHeader() {
         HeadToolbar headToolbar = getHeadToolbar();
         mLayoutId = headToolbar.getLayoutId();
+        mTitleBar = headToolbar.getTitleBar();
         mToolbarTitle = headToolbar.getToolbarTitle();
+        mBackDrawable = headToolbar.getBackDrawable();
+        mToolbarTitleColor = headToolbar.getToolbarTitleColor();
     }
 
     private void initDatabinding() {
@@ -103,7 +136,11 @@ public abstract class BaseActivity<V extends AndroidViewModel, B extends ViewDat
         return ViewModelProviders.of(this, mViewModelFactory).get(onBindViewModel());
     }
 
-    private void setStatusbar() {
+    /**
+     * 设置电池栏等适配
+     */
+    protected void setStatusbar() {
+        ImmersionBar.with(this).titleBar(mTitleBar).init();
     }
 
     /**
@@ -141,7 +178,6 @@ public abstract class BaseActivity<V extends AndroidViewModel, B extends ViewDat
         }
         return false;
     }
-
 
 
 }
