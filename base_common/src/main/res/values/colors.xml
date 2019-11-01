@@ -18,4 +18,8 @@
     <color name="shape3">#5CC2F8</color>
     <color name="title_maincolor">#ffffff</color>
     <color name="scrollbarClolr">#7d7d7d7d</color>
+    <!--基本颜色-->
+    <color name="white">#ffffff</color>
+    <color name="gray_ededed">#ededed</color>
+    <color name="line_color">#5d8df7</color>
 </resources>

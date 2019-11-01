@@ -25,7 +25,9 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mdatabinding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
-        tvSkip.setOnClickListener { ARouter.getInstance().build(RouterUrl.LOGIN).navigation() }
+        tvSkip.setOnClickListener {
+            ARouter.getInstance().build(RouterUrl.LOGIN).navigation()
+        }
     }
 
     var exitTime = 0L

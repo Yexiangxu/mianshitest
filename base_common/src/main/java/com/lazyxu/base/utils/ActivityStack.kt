@@ -158,4 +158,9 @@ class ActivityStack private constructor() {
     //    public Activity activityAt(int position) {
     //        return position < this.mActivities.size() ? (Activity) this.mActivities.elementAt(position) : null;
     //    }
+//    fun restartApp() {
+//        val intent = BaseApplication.getInstance().getPackageManager().getLaunchIntentForPackage(BaseApplication.getInstance().getPackageName())
+//        intent!!.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//        BaseApplication.getInstance().startActivity(intent)
+//    }
 }

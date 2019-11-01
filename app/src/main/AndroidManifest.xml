@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.administrator.mianshitest">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.example.administrator.mianshitest">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络 -->
     <uses-permission android:name="android.permission.CAMERA" /> <!-- 拍照 -->
@@ -11,46 +11,50 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许程序访问有关GSM网络信息 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:name=".BaseApplication"
-        android:theme="@style/AppTheme"
-        tools:replace="android:icon,android:label,android:theme,android:allowBackup,android:supportsRtl">
+            android:name=".BaseApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            tools:replace="android:icon,android:label,android:theme,android:allowBackup,android:supportsRtl">
         <activity android:name=".leak.LeakAActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity-->
-            <!--android:name=".launch.LeakAActivity"-->
-            <!--android:process=":remoteWeb">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.VIEW" />-->
-
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-                <!--<category android:name="android.intent.category.BROWSABLE" />-->
-
-                <!--<data-->
-                    <!--android:host="myhost"-->
-                    <!--android:path="/main"-->
-                    <!--android:port="1024"-->
-                    <!--android:scheme="myscheme" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
         <activity
-            android:name=".launch.CActivity"
-            android:process=":remoteCCCCCC" />
+                android:name=".launch.CActivity"
+                android:process=":remoteCCCCCC" />
         <activity
-            android:name=".launch.DActivity"
-            android:launchMode="standard" />
+                android:name=".launch.DActivity"
+                android:launchMode="standard" />
         <activity android:name=".launch.EActivity" />
-        <activity android:name=".leak.LeakBActivity" />
+        <activity
+                android:name=".leak.LeakBActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+            <!--mmt://borrow:6666/borrowDetail?borrowid=10011002-->
+            <intent-filter>
+                <data
+                        android:host="borrow"
+                        android:path="/borrowDetail"
+                        android:port="6666"
+                        android:scheme="mmt" />
+                <!--下面这几行也必须得设置-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity android:name=".leak.LeakCActivity" />
         <activity android:name=".sqlite.SqliteActivity" />
+        <activity android:name=".recyclerview.RecyclerviewActivity" />
     </application>
 
-</manifest>
+</manifest><!--            <intent-filter >-->
+        <!--                <action android:name="com.action.test"/>-->
+        <!--                <category android:name="android.intent.category.DEFAULT"/>-->
+        <!--            </intent-filter>-->

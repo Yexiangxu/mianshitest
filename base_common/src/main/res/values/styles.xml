@@ -51,4 +51,17 @@
         <item name="android:textSize">16sp</item> <!--  menu字体大小-->
         <item name="android:textColor">@color/colorAccent</item> <!--  menu字体大小-->
     </style>
+
+    <style name="TvCenterStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:paddingTop">@dimen/dp10</item>
+        <item name="android:paddingBottom">@dimen/dp10</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:clickable">true</item>
+    </style>
 </resources>

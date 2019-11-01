@@ -48,7 +48,7 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
     private fun loginSuc(aBoolean: Boolean?) {
         if (aBoolean != null && aBoolean) {
             AppToast.show("登录成功")
-            ARouter.getInstance().build(RouterUrl.WEBVIEWMAIN).navigation()
+            ARouter.getInstance().build(RouterUrl.SETTING).navigation()
         }
     }
 }

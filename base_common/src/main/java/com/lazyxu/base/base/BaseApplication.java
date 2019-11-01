@@ -40,7 +40,7 @@ public class BaseApplication extends Application {
         super.onCreate();
         MINSTATCE = this;
 
-        if (getPackageName().equals(DeviceUtil.getProcessName())) {
+        if (getPackageName().equals(DeviceUtil.INSTANCE.getProcessName())) {
             initDebug();
             //今日头条屏幕适配（宽高不能同时适配，这里只做了宽度竖屏适配，如果有横竖屏切换还需处理）
             ScreenAdapterUtil.setDensity(this, 360);

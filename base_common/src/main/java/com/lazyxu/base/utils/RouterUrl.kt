@@ -8,7 +8,13 @@ package com.lazyxu.base.utils
  */
 object RouterUrl {
 
-    const val LOGIN = "/user/login"
     const val HOTFILM = "/film/hot"
     const val WEBVIEWMAIN = "/base/webviewmain"
+
+
+    /**
+     * 个人中心
+     */
+    const val LOGIN = "/user/login"
+    const val SETTING = "/user/setting"
 }

@@ -1,6 +1,7 @@
 package com.example.administrator.mianshitest.leak;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +27,16 @@ public class LeakBActivity extends AppCompatActivity {
         LeakTest.getInstance().setmTextView(showButton);
 //        context = this;
 //        initData();
-    }
+
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        if (Intent.ACTION_VIEW.equals(action)) {
+            Uri uri = intent.getData();
+            if (uri != null) {
+                String name = uri.getQueryParameter("name");
+                String age = uri.getQueryParameter("age");
+            }
+        }
 
 
 //    private void initData() {
@@ -56,4 +66,5 @@ public class LeakBActivity extends AppCompatActivity {
 //                    }
 //                });
 //    }
+    }
 }
