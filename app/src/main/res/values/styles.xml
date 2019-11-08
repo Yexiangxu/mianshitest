@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:textColorPrimary">@color/title_maincolor</item> <!--返回键处文字颜色-->
+        <item name="android:textColorPrimary">@android:color/black</item> <!--返回键处文字颜色-->
         <item name="colorPrimary">@color/statusbar_maincolor</item> <!-- scrollview等滑动到底颜色、工具栏(标题栏)颜色-->
         <item name="colorAccent">@color/statusbar_maincolor
         </item>        <!--输入框 checkbox等获取焦点状态下颜色-->

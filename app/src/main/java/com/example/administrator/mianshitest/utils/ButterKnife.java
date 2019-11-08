@@ -20,7 +20,7 @@ public class ButterKnife {
         BindActivity classInfo = clazz.getAnnotation(BindActivity.class);
         if (classInfo != null) {
             int classValue=classInfo.contentViewId();
-            //下面一行输出 public MainActivity
+            //下面一行输出 public SocketActivity
             System.out.println(Modifier.toString(clazz.getModifiers()) +" " + clazz.getSimpleName());
             activity.setContentView(classValue);
         }

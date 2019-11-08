@@ -20,7 +20,7 @@ public class CActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_c);
-        flag = getIntent().getIntExtra("MainActivity", 0);
+        flag = getIntent().getIntExtra("SocketActivity", 0);
         Log.i("processtest", "CActivity的flag="+flag);
         showButton = findViewById(R.id.tv_c);
         showButton.setText("LeakBActivity");

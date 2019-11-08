@@ -23,13 +23,13 @@ public class BActivity extends AppCompatActivity {
         flag = getIntent().getIntExtra("AActivity", 0);
         Log.i("processtest", "BActivity的flag=" + flag);
         showButton = findViewById(R.id.tv_c);
-        showButton.setText("MainActivity");
+        showButton.setText("SocketActivity");
         showButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //回传值
                 Intent intent = new Intent(BActivity.this, CActivity.class);
-                intent.putExtra("MainActivity", 888);
+                intent.putExtra("SocketActivity", 888);
                 startActivity(intent);
             }
         });
