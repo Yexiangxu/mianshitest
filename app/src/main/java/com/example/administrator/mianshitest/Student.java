@@ -1,5 +1,6 @@
 package com.example.administrator.mianshitest;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Objects;
  * Description:
  * FIXME
  */
-public class Student {
+public class Student implements Serializable {
     public Student() {
         super();
     }

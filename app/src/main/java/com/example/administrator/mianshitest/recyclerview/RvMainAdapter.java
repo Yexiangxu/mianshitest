@@ -48,17 +48,16 @@ public class RvMainAdapter extends RecyclerView.Adapter<RvMainAdapter.ViewHolder
         return new RvMainAdapter.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recyclerview, parent, false));
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull RvMainAdapter.ViewHolder holder, int position, @NonNull List<Object> payloads) {
-        //需要判断下payloads是否为空，如果为空的话执行默认的OnBindViewHolder方法，如果不为空的话，执行我们自己的局部刷新方法
-
-        if (payloads.isEmpty()) {
-            onBindViewHolder(holder, position);
-        } else {
-            //执行局部刷新
-        }
-
-    }
+//    @Override
+//    public void onBindViewHolder(@NonNull RvMainAdapter.ViewHolder holder, int position, @NonNull List<Object> payloads) {
+//        //需要判断payloads是否为空，如果为空执行默认的OnBindViewHolder方法，如果不为空执行我们自己的局部刷新方法
+//        if (payloads.isEmpty()) {
+//            super.onBindViewHolder(holder, position, payloads);
+//        } else {
+//            //仅更新个别控件
+//            holder.mDataBinding.tvContent.setText( mList.get(position));
+//        }
+//    }
 
     @Override
     public void onBindViewHolder(final RvMainAdapter.ViewHolder holder, int position) {
@@ -74,7 +73,7 @@ public class RvMainAdapter extends RecyclerView.Adapter<RvMainAdapter.ViewHolder
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private ItemRecyclerviewBinding mDataBinding;
+        public ItemRecyclerviewBinding mDataBinding;
 
         public ViewHolder(View itemView) {
             super(itemView);

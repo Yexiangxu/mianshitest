@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity
 class Kot : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main1)
     }
 
 

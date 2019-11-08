@@ -22,9 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:itemCount="4"
-                android:paddingTop="16dp"
                 android:clipToPadding="false"
-
                 tools:listitem="@layout/item_recyclerview"/>
 
     </android.support.v7.widget.LinearLayoutCompat>

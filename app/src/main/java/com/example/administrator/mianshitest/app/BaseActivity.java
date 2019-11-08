@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.mianshitest.R;
@@ -22,7 +21,6 @@ public class BaseActivity extends AppCompatActivity {
     private long mLastADTime = 0;
     //广告页的view
     private View mAdView;
-    private ImageView mIvAd;
     private TextView mTvTimer;
     private CountDownTimer mTimer;
 
@@ -33,8 +31,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     private void initAdView() {
-        mAdView = View.inflate(this, R.layout.activity_base_ad_view, null);
-        mIvAd = (ImageView) mAdView.findViewById(R.id.iv_ad);
+        mAdView = View.inflate(this, R.layout.activity_inflate, null);
         mTvTimer = (TextView) mAdView.findViewById(R.id.tv_timer);
         mTimer = new CountDownTimer(mADDuration, 1000) {
             @Override
@@ -75,7 +72,6 @@ public class BaseActivity extends AppCompatActivity {
         // 显示广告页面
         createADView();
         // 随机显示一个广告页
-        showRandomAD();
         // 开始倒计时
         mTimer.cancel();
         mTimer.start();
@@ -101,8 +97,6 @@ public class BaseActivity extends AppCompatActivity {
         getWindowManager().addView(mAdView, params);
     }
 
-    private void showRandomAD() {
-        mIvAd.setImageResource(R.drawable.ic_launcher_background);
-    }
+
 
 }

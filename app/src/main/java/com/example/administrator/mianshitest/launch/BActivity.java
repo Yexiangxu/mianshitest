@@ -19,17 +19,17 @@ public class BActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_ad_view);
+        setContentView(R.layout.activity_inflate);
         flag = getIntent().getIntExtra("AActivity", 0);
         Log.i("processtest", "BActivity的flag=" + flag);
         showButton = findViewById(R.id.tv_c);
-        showButton.setText("LeakAActivity");
+        showButton.setText("MainActivity");
         showButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //回传值
                 Intent intent = new Intent(BActivity.this, CActivity.class);
-                intent.putExtra("LeakAActivity", 888);
+                intent.putExtra("MainActivity", 888);
                 startActivity(intent);
             }
         });

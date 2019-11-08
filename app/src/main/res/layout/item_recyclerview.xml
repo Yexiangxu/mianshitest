@@ -7,9 +7,11 @@
     </data>
 
     <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/llContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_gravity="center"
             android:background="@android:color/darker_gray">
 
         <TextView

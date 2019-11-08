@@ -8,6 +8,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import com.example.administrator.mianshitest.R;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
  */
 public class RecyclerViewJava extends AppCompatActivity {
     ActivityRecyclerviewBinding mDatabinding;
-    private RvMainAdapter rvMainAdapter=null;
+    private RvMainAdapter rvMainAdapter = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,15 +42,9 @@ public class RecyclerViewJava extends AppCompatActivity {
         mDatabinding.tvChangeData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.setTag("");
-                rvMainAdapter.notifyDataSetChanged();
             }
         });
-        mDatabinding.rvMain.findViewHolderForAdapterPosition(20);
+        LayoutInflater.from(this).inflate(R.layout.activity_recyclerview, null);
 
-        RecyclerView.ItemAnimator itemAnimator=mDatabinding.rvMain.getItemAnimator();
-        if (itemAnimator instanceof SimpleItemAnimator){
-            ((SimpleItemAnimator) itemAnimator).setSupportsChangeAnimations(false);
-        }
     }
 }
